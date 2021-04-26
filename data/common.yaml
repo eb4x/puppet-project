@@ -1,0 +1,8 @@
+---
+
+redis::bind: '127.0.0.1'
+
+postgresql::globals::manage_package_repo: true
+postgresql::globals::version: '10'
+
+foreman::initial_admin_password: 'changeme'
