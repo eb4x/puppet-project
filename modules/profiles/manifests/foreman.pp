@@ -1,4 +1,6 @@
-class profiles::foreman {
+class profiles::foreman(
+  Hash $config1 = $profiles::foreman::config1,
+) {
 
   class { '::foreman::repo':
     repo => '2.3',
@@ -9,6 +11,17 @@ class profiles::foreman {
   }
 
   include ::foreman
+
+  #$config1 = lookup('profiles::foreman::config1')
+  $config1.each |$setting, $value| {
+    foreman_config_entry { $setting:
+      value => $value,
+      require => Class['foreman::database'],
+    }
+  }
+
+  $config2 = lookup('profiles::foreman::config2')
+  create_resources('foreman_config_entry', $config2, { require => Class['foreman::install'] } )
 
   firewall { '190 foreman accept http/https':
     dport => [80, 443],
