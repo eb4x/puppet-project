@@ -1,1 +1,1 @@
-include profiles::foreman
+include profile::foreman

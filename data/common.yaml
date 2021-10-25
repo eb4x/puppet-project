@@ -6,3 +6,22 @@ postgresql::globals::manage_package_repo: true
 postgresql::globals::version: '10'
 
 foreman::initial_admin_password: 'changeme'
+
+profile::foreman::config1:
+  default_location:     'Main Location'
+  default_organization: 'Main Organization'
+
+profile::foreman::config2:
+  create_new_host_when_facts_are_uploaded:
+    value:  'false'
+  destroy_vm_on_host_delete:
+    value:  'true'
+
+#  discovery_fact_column:
+#    value:  'ipmi_ipaddress'
+#  entries_per_page:
+#    value:  100
+#  foreman_url:
+#    value:  "https://foreman.%{hiera('domain_public')}"
+#  idle_timeout:
+#    value:  180

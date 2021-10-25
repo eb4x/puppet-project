@@ -17,6 +17,3 @@ mod 'augeasproviders_core',   :git => 'https://github.com/hercules-team/augeaspr
 mod 'augeasproviders_sysctl', :git => 'https://github.com/hercules-team/augeasproviders_sysctl', :ref => '2.1.0'
 mod 'inifile',                :git => 'https://github.com/puppetlabs/puppetlabs-inifile',        :ref => '2.0.0'
 mod 'translate',              :git => 'https://github.com/puppetlabs/puppetlabs-translate',      :ref => '1.2.0'
-
-mod 'profiles',
-  :local => true
