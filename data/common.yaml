@@ -7,6 +7,12 @@ postgresql::globals::version: '10'
 
 foreman::initial_admin_password: 'changeme'
 
+firewalld::services:
+  'http':
+    ensure: present
+    service: http
+    zone: public
+
 profile::foreman::config1:
   default_location:     'Main Location'
   default_organization: 'Main Organization'

@@ -13,6 +13,9 @@ mod 'concat',            :git => 'https://github.com/puppetlabs/puppetlabs-conca
 mod 'postgresql',        :git => 'https://github.com/puppetlabs/puppetlabs-postgresql', :ref => 'v6.8.0'
 mod 'stdlib',            :git => 'https://github.com/puppetlabs/puppetlabs-stdlib',     :ref => '4.25.0'
 
+mod 'firewall',  :git => 'https://github.com/puppetlabs/puppetlabs-firewall', :ref => '1.8.2'
+mod 'firewalld', :git => 'https://github.com/voxpupuli/puppet-firewalld',     :ref => 'v4.4.0'
+
 mod 'augeasproviders_core',   :git => 'https://github.com/hercules-team/augeasproviders_core',   :ref => '2.1.4'
 mod 'augeasproviders_sysctl', :git => 'https://github.com/hercules-team/augeasproviders_sysctl', :ref => '2.1.0'
 mod 'inifile',                :git => 'https://github.com/puppetlabs/puppetlabs-inifile',        :ref => '2.0.0'
