@@ -9,3 +9,7 @@ puppet lookup --modulepath modules --hiera_config=hiera.yaml --node foreman.maas
 puppet apply --modulepath modules --noop --graph --graphdir graphs manifests/site.pp 
 puppet apply --modulepath modules --verbose --debug --trace --hiera_config=hiera.yaml manifests/site.pp
 ```
+
+```
+dot -Tsvg graphs/expanded_relationships.dot -o graphex.svg
+```
