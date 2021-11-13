@@ -1,1 +1,1 @@
-include profile::foreman
+lookup('classes', {merge => unique}).include
