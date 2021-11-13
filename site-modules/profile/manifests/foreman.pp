@@ -11,6 +11,7 @@ class profile::foreman(
   }
 
   include ::foreman
+  include ::foreman::cli
   include ::foreman_proxy
 
   case $::osfamily {
