@@ -7,6 +7,10 @@ postgresql::globals::version: '10'
 
 foreman::initial_admin_password: 'changeme'
 
+foreman_proxy::bmc: true
+foreman_proxy::dhcp: true
+foreman_proxy::tftp: true
+
 firewalld::services:
   'http':
     ensure: present

@@ -11,17 +11,7 @@ class profile::foreman(
   }
 
   include ::foreman
-
-  #$config1 = lookup('profile::foreman::config1')
-  $config1.each |$setting, $value| {
-    foreman_config_entry { $setting:
-      value => $value,
-      require => Class['foreman::database'],
-    }
-  }
-
-  $config2 = lookup('profile::foreman::config2')
-  create_resources('foreman_config_entry', $config2, { require => Class['foreman::install'] } )
+  include ::foreman_proxy
 
   case $::osfamily {
     'RedHat': {
