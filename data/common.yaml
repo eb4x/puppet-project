@@ -11,12 +11,6 @@ foreman_proxy::bmc: true
 foreman_proxy::dhcp: true
 foreman_proxy::tftp: true
 
-firewalld::services:
-  'http':
-    ensure: present
-    service: http
-    zone: public
-
 profile::foreman::config1:
   default_location:     'Main Location'
   default_organization: 'Main Organization'

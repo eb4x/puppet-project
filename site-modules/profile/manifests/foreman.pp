@@ -20,15 +20,9 @@ class profile::foreman(
 
   case $::osfamily {
     'RedHat': {
-      firewalld_service { 'http':
+      firewalld_service { 'RH Satellite 6 capsule':
         ensure => 'present',
-        service => 'http',
-        zone => 'public',
-      }
-
-      firewalld_service { 'https':
-        ensure => 'present',
-        service => 'https',
+        service => 'RH-Satellite-6-capsule',
         zone => 'public',
       }
     }
