@@ -13,6 +13,9 @@ class profile::foreman(
   include ::foreman
   include ::foreman::cli
   include ::foreman::compute::libvirt
+  include ::foreman::plugin::hooks
+  include ::foreman::plugin::discovery
+  include ::foreman::plugin::templates
   include ::foreman_proxy
 
   case $::osfamily {
