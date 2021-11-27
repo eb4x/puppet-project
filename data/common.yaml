@@ -5,6 +5,15 @@ redis::bind: '127.0.0.1'
 postgresql::globals::manage_package_repo: true
 postgresql::globals::version: '10'
 
+foreman::version: latest
+foreman::plugin::version: latest
+
+foreman::cli::version: latest
+foreman::cli::plugin::version: latest
+
+foreman_proxy::version: latest
+foreman_proxy::plugin::version: latest
+
 foreman::initial_admin_password: 'changeme'
 
 foreman_proxy::bmc: true

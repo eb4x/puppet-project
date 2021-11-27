@@ -11,7 +11,15 @@ class profile::foreman(
   }
 
   include ::foreman
+
   include ::foreman::cli
+  foreman::cli::plugin { 'foreman':
+    version => 'latest',
+  }
+  foreman::cli::plugin { 'foreman_templates':
+    version => 'latest',
+  }
+
   include ::foreman::compute::libvirt
   include ::foreman::plugin::hooks
   include ::foreman::plugin::discovery
