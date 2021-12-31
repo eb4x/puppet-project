@@ -3,7 +3,7 @@ class profile::foreman(
 ) {
 
   class { '::foreman::repo':
-    repo => '2.4',
+    repo => '2.5',
   }
 
   class { '::puppet':
