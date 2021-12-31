@@ -10,7 +10,7 @@ sudo /opt/puppetlabs/puppet/bin/gem install r10k
 
 sudo mkdir -p /etc/puppetlabs/r10k
 #vim /etc/puppetlabs/r10k/r10k.yaml
-cat <<EOF > /etc/puppetlabs/r10k/r10k.yaml
+cat <<EOF | sudo tee /etc/puppetlabs/r10k/r10k.yaml
 ---
 cachedir: '/var/cache/r10k'
 #proxy: 'http://proxy.example.com:8000'
