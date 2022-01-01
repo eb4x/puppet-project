@@ -1,0 +1,4 @@
+---
+
+postgresql::globals::manage_package_repo: true
+postgresql::globals::version: '10'
