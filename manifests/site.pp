@@ -7,10 +7,14 @@ $location          = $::short_name_array[0]
 $role              = $::short_name_array[1]
 
 # dumb test
-if size($short_name_array) == 3 {
-  include role::$role
-} else if $short_name == "foreman" {
-  include role::admin
-}
+#if size($short_name_array) == 3 {
+#  include role::$role
+#} else if $short_name == "foreman" {
+#  include role::admin
+#}
 
 #lookup('classes', {merge => unique}).include
+
+node 'foreman.example.com' {
+  include role::admin
+}
