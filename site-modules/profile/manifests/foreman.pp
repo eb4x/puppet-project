@@ -30,10 +30,21 @@ class profile::foreman(
 
   case $::osfamily {
     'RedHat': {
-      firewalld_service { 'RH Satellite 6 capsule':
-        ensure => 'present',
-        service => 'RH-Satellite-6-capsule',
-        zone => 'public',
+      case $::operatingsystemmajrelease {
+        '8': {
+          firewalld_service { 'RH Satellite 6':
+            ensure => 'present',
+            service => 'RH-Satellite-6',
+            zone => 'public',
+          }
+        }
+        '7': {
+          firewalld_service { 'RH Satellite 6 capsule':
+            ensure => 'present',
+            service => 'RH-Satellite-6-capsule',
+            zone => 'public',
+          }
+        }
       }
     }
     default: {
