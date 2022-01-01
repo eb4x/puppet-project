@@ -13,19 +13,36 @@ class profile::foreman(
   include ::foreman
 
   include ::foreman::cli
+  Class['foreman::cli'] <-
+  Class['foreman::repo']
+
   foreman::cli::plugin { 'foreman':
+    require => Class['foreman::repo'],
     version => 'latest',
   }
   foreman::cli::plugin { 'foreman_templates':
+    require => Class['foreman::repo'],
     version => 'latest',
   }
 
   include ::foreman::compute::libvirt
+
   include ::foreman::plugin::hooks
+  Class['foreman::plugin::hooks'] <-
+  Class['foreman::repo']
+
   include ::foreman::plugin::discovery
+  Class['foreman::plugin::discovery'] <-
+  Class['foreman::repo']
+
   include ::foreman::plugin::templates
+  Class['foreman::plugin::templates'] <-
+  Class['foreman::repo']
 
   include ::foreman_proxy
+  Class['foreman_proxy'] <-
+  Class['foreman::repo']
+
   include ::foreman_proxy::plugin::discovery
 
   case $::osfamily {
