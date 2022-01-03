@@ -27,16 +27,10 @@ class profile::foreman(
 
   include ::foreman::compute::libvirt
 
-  include ::foreman::plugin::hooks
-  Class['foreman::plugin::hooks'] <-
-  Class['foreman::repo']
-
   include ::foreman::plugin::discovery
-  Class['foreman::plugin::discovery'] <-
-  Class['foreman::repo']
-
+  include ::foreman::plugin::hooks
   include ::foreman::plugin::templates
-  Class['foreman::plugin::templates'] <-
+  Foreman::Plugin <| |> <-
   Class['foreman::repo']
 
   include ::foreman_proxy
