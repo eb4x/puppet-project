@@ -3,7 +3,7 @@ class profile::foreman(
 ) {
 
   class { '::foreman::repo':
-    repo => '2.5',
+    repo => '3.0',
   }
 
   class { '::puppet':
@@ -29,6 +29,7 @@ class profile::foreman(
 
   include ::foreman::plugin::discovery
   include ::foreman::plugin::hooks
+  include ::foreman::plugin::puppet
   include ::foreman::plugin::templates
   Foreman::Plugin <| |> <-
   Class['foreman::repo']
