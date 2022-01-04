@@ -1,12 +1,12 @@
 mod 'theforeman/foreman',
   :git => 'https://github.com/theforeman/puppet-foreman',
-  :ref => '16.0.0'
+  :ref => '16.1.0'
 mod 'theforeman/foreman_proxy',
   :git => 'https://github.com/theforeman/puppet-foreman_proxy',
-  :ref => '16.0.2'
+  :ref => '17.1.1'
 
 mod 'datacat',           :git => 'https://github.com/richardc/puppet-datacat',  :ref => '0.6.2'
-mod 'theforeman/dhcp',   :git => 'https://github.com/theforeman/puppet-dhcp',   :ref => '6.1.0'
+mod 'theforeman/dhcp',   :git => 'https://github.com/theforeman/puppet-dhcp',   :ref => '6.2.0'
 mod 'theforeman/dns',    :git => 'https://github.com/theforeman/puppet-dns',    :ref => '8.1.0'
 mod 'theforeman/puppet', :git => 'https://github.com/theforeman/puppet-puppet', :ref => '14.2.1'
 mod 'theforeman/tftp',   :git => 'https://github.com/theforeman/puppet-tftp',   :ref => '6.0.0'
