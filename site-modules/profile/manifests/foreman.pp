@@ -37,6 +37,10 @@ class profile::foreman(
   Class['foreman_proxy'] <-
   Class['foreman::repo']
 
+  # temporary fix, https://github.com/theforeman/puppet-foreman_proxy/pull/719
+  Class['foreman_proxy::proxydhcp'] <-
+  User['foreman-proxy']
+
   include ::foreman_proxy::plugin::discovery
 
   case $::osfamily {
