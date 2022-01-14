@@ -21,7 +21,7 @@ mod 'puppetlabs/apache', :git => 'https://github.com/puppetlabs/puppetlabs-apach
 mod 'apt',               :git => 'https://github.com/puppetlabs/puppetlabs-apt',        :ref => 'v8.3.0'
 mod 'concat',            :git => 'https://github.com/puppetlabs/puppetlabs-concat',     :ref => 'v7.1.1'
 mod 'postgresql',        :git => 'https://github.com/puppetlabs/puppetlabs-postgresql', :ref => 'v7.5.0'
-mod 'stdlib',            :git => 'https://github.com/puppetlabs/puppetlabs-stdlib',     :ref => 'v7.1.0'
+mod 'stdlib',            :git => 'https://github.com/puppetlabs/puppetlabs-stdlib',     :ref => 'v6.6.0'
 mod 'puppetlabs/xinetd', :git => 'https://github.com/puppetlabs/puppetlabs-xinetd',     :ref => 'v3.3.0'
 
 mod 'inifile',                :git => 'https://github.com/puppetlabs/puppetlabs-inifile',        :ref => 'v5.2.0'
