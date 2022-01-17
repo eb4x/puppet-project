@@ -8,6 +8,7 @@ class profile::foreman(
 
   class { '::puppet':
     server => true,
+    server_external_nodes => '',
   }
 
   include ::foreman
