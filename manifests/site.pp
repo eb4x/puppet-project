@@ -3,18 +3,16 @@ $fqdn_array        = split($::verified_certname, '\.')
 $short_name        = $::fqdn_array[0]
 $short_name_array  = split($::short_name, '-')
 
-$location          = $::short_name_array[0]
-$role              = $::short_name_array[1]
+notify { "$location":
+}
 
-# dumb test
-#if size($short_name_array) == 3 {
-#  include role::$role
-#} else if $short_name == "foreman" {
-#  include role::admin
-#}
+if $short_name_array.size == 3 {
+#  $location = $short_name_array[0]
+  $role     = $short_name_array[1]
 
-#lookup('classes', {merge => unique}).include
-
-node 'foreman.example.com' {
+  include "role::${role}"
+} elsif $short_name == "foreman" {
   include role::admin
 }
+
+node default { }
