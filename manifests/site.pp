@@ -8,7 +8,7 @@ if $short_name_array.size == 3 {
   $role     = $short_name_array[1]
 
   include "role::${role}"
-} elsif $short_name == "foreman" {
+} elsif $short_name == 'foreman' {
   include role::admin
 }
 

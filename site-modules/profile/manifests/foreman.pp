@@ -7,15 +7,15 @@ class profile::foreman(
   }
 
   class { '::puppet':
-    server => true,
+    server                => true,
     server_external_nodes => '',
   }
 
   include ::foreman
 
   include ::foreman::cli
-  Class['foreman::cli'] <-
   Class['foreman::repo']
+  -> Class['foreman::cli']
 
   foreman::cli::plugin { 'foreman':
     require => Class['foreman::repo'],
@@ -31,16 +31,16 @@ class profile::foreman(
   include ::foreman::plugin::discovery
   include ::foreman::plugin::hooks
   include ::foreman::plugin::templates
-  Foreman::Plugin <| |> <-
   Class['foreman::repo']
+  -> Foreman::Plugin <| |>
 
   include ::foreman_proxy
-  Class['foreman_proxy'] <-
   Class['foreman::repo']
+  -> Class['foreman_proxy']
 
   # temporary fix, https://github.com/theforeman/puppet-foreman_proxy/pull/719
-  Class['foreman_proxy::proxydhcp'] <-
   User['foreman-proxy']
+  -> Class['foreman_proxy::proxydhcp']
 
   include ::foreman_proxy::plugin::discovery
 
@@ -49,18 +49,19 @@ class profile::foreman(
       case $::operatingsystemmajrelease {
         '8': {
           firewalld_service { 'RH Satellite 6':
-            ensure => 'present',
+            ensure  => 'present',
             service => 'RH-Satellite-6',
-            zone => 'public',
+            zone    => 'public',
           }
         }
         '7': {
           firewalld_service { 'RH Satellite 6 capsule':
-            ensure => 'present',
+            ensure  => 'present',
             service => 'RH-Satellite-6-capsule',
-            zone => 'public',
+            zone    => 'public',
           }
         }
+        default: { }
       }
     }
     default: {
