@@ -39,7 +39,7 @@ class profile::foreman(
   -> Class['foreman_proxy']
 
   # temporary fix, https://github.com/theforeman/puppet-foreman_proxy/pull/719
-  User['foreman-proxy']
+  User[$foreman_proxy::user]
   -> Class['foreman_proxy::proxydhcp']
 
   include ::foreman_proxy::plugin::discovery
