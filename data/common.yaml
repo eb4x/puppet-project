@@ -2,16 +2,11 @@
 
 redis::bind: '127.0.0.1'
 
-foreman::version: latest
-foreman::plugin::version: latest
-
 foreman::cli::version: latest
 foreman::cli::plugin::version: latest
 
 foreman_proxy::version: latest
 foreman_proxy::plugin::version: latest
-
-foreman::initial_admin_password: 'changeme'
 
 foreman_proxy::bmc: true
 foreman_proxy::dhcp: true

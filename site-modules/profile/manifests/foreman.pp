@@ -11,7 +11,11 @@ class profile::foreman(
     server_external_nodes => '',
   }
 
-  include ::foreman
+  class { '::foreman':
+    version => 'latest',
+    plugin_version => 'latest',
+    initial_admin_password => 'changeme',
+  }
 
   include ::foreman::cli
   Class['foreman::repo']
