@@ -10,6 +10,8 @@ defaults:
 hierarchy:
   - name: "Per-node data"
     path: "nodes/%{trusted.certname}.yaml"
+  - name: "Site data"
+    path: "sites/%{location}.yaml"
   - name: "Per-OS defaults"
     paths:
       - "os/%{facts.os.family}-%{facts.os.release.major}.yaml"

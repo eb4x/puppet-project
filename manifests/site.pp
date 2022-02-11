@@ -9,7 +9,10 @@ if $short_name_array.size == 3 {
 
   include "role::${role}"
 } elsif $short_name == 'foreman' {
-  include role::admin
+  $location = "local4"
+  $role = "admin"
+
+  include "role::${role}"
 }
 
 node default { }

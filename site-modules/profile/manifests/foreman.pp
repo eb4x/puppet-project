@@ -1,5 +1,6 @@
 class profile::foreman(
   Hash $settings = {},
+  Hash $dhcp_classes = {},
 ) {
 
   class { '::foreman::repo':
@@ -44,6 +45,8 @@ class profile::foreman(
       require => Class['foreman::database'],
     }
   }
+
+  create_resources('dhcp::dhcp_class', $dhcp_classes)
 
   include ::foreman_proxy
   Class['foreman::repo']
