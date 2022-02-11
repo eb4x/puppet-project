@@ -1,5 +1,5 @@
 class profile::foreman(
-  Hash $config1 = $profile::foreman::config1,
+  Hash $settings = {},
 ) {
 
   class { '::foreman::repo':
@@ -37,6 +37,13 @@ class profile::foreman(
   include ::foreman::plugin::templates
   Class['foreman::repo']
   -> Foreman::Plugin <| |>
+
+  $settings.each |$setting, $value| {
+    foreman_config_entry { $setting:
+      value   => $value,
+      require => Class['foreman::database'],
+    }
+  }
 
   include ::foreman_proxy
   Class['foreman::repo']

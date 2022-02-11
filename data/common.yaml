@@ -17,24 +17,19 @@ foreman_proxy::tftp: true
 
 foreman_proxy::plugin::discovery::install_images: true
 
-profile::foreman::config1:
-  default_location:     'Main Location'
-  default_organization: 'Main Organization'
-
-profile::foreman::config2:
-  create_new_host_when_facts_are_uploaded:
-    value:  'false'
-  destroy_vm_on_host_delete:
-    value:  'true'
-
-#  discovery_fact_column:
-#    value:  'ipmi_ipaddress'
-#  entries_per_page:
-#    value:  100
-#  foreman_url:
-#    value:  "https://foreman.%{hiera('domain_public')}"
-#  idle_timeout:
-#    value:  180
+profile::foreman::settings:
+  # General
+  entries_per_page: 100
+  #Provision
+  destroy_vm_on_host_delete: true
+  use_shortname_for_vms: true
+  #Puppet
+  create_new_host_when_facts_are_uploaded: false
+  create_new_host_when_report_is_uploaded: false
+  default_location: 'Default Location'
+  default_organization: 'Default Organization'
+  #Authentication
+  idle_timeout: 180
 
 profile::puppetserver::r10k_sources:
   puppet-project: "https://github.com/eb4x/puppet-project.git"
