@@ -9,7 +9,9 @@ defaults:
   data_hash: yaml_data
 hierarchy:
   - name: "Per-node data"
-    path: "nodes/%{trusted.certname}.yaml"
+    paths:
+      - "nodes/%{trusted.certname}.yaml"
+      - "nodes/%{short_name}.yaml"
   - name: "Site data"
     path: "sites/%{location}.yaml"
   - name: "Per-OS defaults"

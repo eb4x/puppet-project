@@ -36,3 +36,5 @@ mod 'libvirt',   :git => 'https://github.com/thias/puppet-libvirt',           :r
 mod 'puppet-r10k',        :git => 'https://github.com/voxpupuli/puppet-r10k',         :ref => 'v10.1.0'
 mod 'choria/mcollective', :git => 'https://github.com/choria-io/puppet-mcollective',  :ref => '0.13.4'
 mod 'puppetlabs/vcsrepo', :git => 'https://github.com/puppetlabs/puppetlabs-vcsrepo', :ref => 'v5.0.0'
+
+mod 'network',    :git => 'https://github.com/eb4x/puppet-network',    :ref => 'master'
