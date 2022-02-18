@@ -37,4 +37,4 @@ mod 'puppet-r10k',        :git => 'https://github.com/voxpupuli/puppet-r10k',   
 mod 'choria/mcollective', :git => 'https://github.com/choria-io/puppet-mcollective',  :ref => '0.13.4'
 mod 'puppetlabs/vcsrepo', :git => 'https://github.com/puppetlabs/puppetlabs-vcsrepo', :ref => 'v5.0.0'
 
-mod 'network',    :git => 'https://github.com/eb4x/puppet-network',    :ref => 'master'
+mod 'network', :git => 'https://github.com/eb4x/example42-network', :ref => 'master'
