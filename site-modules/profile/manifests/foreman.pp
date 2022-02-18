@@ -2,6 +2,7 @@ class profile::foreman(
   Hash $settings = {},
   Hash $dhcp_classes = {},
   String $initial_admin_password = 'changeme',
+  String $db_password = 'changeme',
 ) {
 
   class { '::foreman::repo':
@@ -17,6 +18,7 @@ class profile::foreman(
     version => 'latest',
     plugin_version => 'latest',
     initial_admin_password => $initial_admin_password,
+    db_password => $db_password,
   }
 
   include ::foreman::cli
