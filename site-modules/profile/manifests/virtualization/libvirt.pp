@@ -1,5 +1,5 @@
 class profile::virtualization::libvirt(
-  $manage_firewall = false,
+  Boolean $manage_firewall = true,
 ) {
   include ::libvirt
 
