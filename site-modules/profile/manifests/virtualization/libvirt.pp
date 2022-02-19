@@ -1,7 +1,11 @@
-class profile::virtualization::libvirt(
+class profile::virtualization::libvirt (
+  Hash $networks = {},
   Boolean $manage_firewall = true,
 ) {
-  include ::libvirt
+
+  class { '::libvirt':
+    networks => $networks,
+  }
 
   if $manage_firewall {
     firewalld_custom_service { 'libvirt-gfx':

@@ -33,3 +33,15 @@ profile::foreman::settings:
 
 profile::puppetserver::r10k_sources:
   puppet-project: "https://github.com/eb4x/puppet-project.git"
+
+profile::virtualization::libvirt::networks:
+  provision:
+    ensure: enabled
+    autostart: true
+    forward_mode: bridge
+    bridge: br-provision
+  openstack:
+    ensure: enabled
+    autostart: true
+    forward_mode: bridge
+    bridge: br-openstack
