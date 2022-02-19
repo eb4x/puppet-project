@@ -1,10 +1,20 @@
 class profile::virtualization::libvirt (
+  String $auth_tcp = 'none',
   Hash $networks = {},
   Boolean $manage_firewall = true,
 ) {
 
   class { '::libvirt':
+    auth_tcp => $auth_tcp,
     networks => $networks,
+  }
+
+  service { 'libvirtd-tcp':
+    name => 'libvirtd-tcp.socket',
+    enable => true,
+    ensure => 'running',
+    require => Package['libvirt'],
+    before => Service['libvirtd'],
   }
 
   if $manage_firewall {
