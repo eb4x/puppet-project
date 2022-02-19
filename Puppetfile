@@ -31,7 +31,7 @@ mod 'translate',              :git => 'https://github.com/puppetlabs/puppetlabs-
 
 mod 'firewall',  :git => 'https://github.com/puppetlabs/puppetlabs-firewall', :ref => '1.8.2'
 mod 'firewalld', :git => 'https://github.com/voxpupuli/puppet-firewalld',     :ref => 'v4.4.0'
-mod 'libvirt',   :git => 'https://github.com/thias/puppet-libvirt',           :ref => '1.0.1'
+mod 'libvirt',   :git => 'https://github.com/eb4x/puppet-libvirt',            :ref => 'master'
 
 mod 'puppet-r10k',        :git => 'https://github.com/voxpupuli/puppet-r10k',         :ref => 'v10.1.0'
 mod 'choria/mcollective', :git => 'https://github.com/choria-io/puppet-mcollective',  :ref => '0.13.4'
