@@ -40,7 +40,7 @@ network::interfaces_hash:
     ipaddress: 192.168.3.101
     netmask: 255.255.255.0
     gateway: 192.168.3.1
-    dns_nameservers: 192.168.3.1
+    dns1: 192.168.3.1
   br-openstack:
     type: Bridge
     ipaddress: 172.29.236.101
