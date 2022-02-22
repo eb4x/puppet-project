@@ -1,0 +1,2 @@
+---
+profile::virtualization::libvirt::libvirt_package_name: libvirt-daemon-system

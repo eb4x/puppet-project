@@ -1,12 +1,23 @@
 class profile::virtualization::libvirt (
+  String $libvirt_package_name,
   String $auth_tcp = 'none',
   Hash $networks = {},
   Boolean $manage_firewall = true,
 ) {
 
-  class { '::libvirt':
-    auth_tcp => $auth_tcp,
-    networks => $networks,
+  #class { '::libvirt':
+  #  auth_tcp => $auth_tcp,
+  #  networks => $networks,
+  #}
+
+  package { 'libvirt':
+    ensure => present,
+    name   => $libvirt_package_name,
+  }
+
+  libvirtd_config { 'auth_tcp':
+    quote => true,
+    value => 'none',
   }
 
   service { 'libvirtd-tcp':
